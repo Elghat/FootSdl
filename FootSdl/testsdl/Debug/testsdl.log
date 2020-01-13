@@ -1,8 +1,2 @@
-﻿  GameMethods.cpp
-c:\users\jeanseb\desktop\testsdl\testsdl\gamemethods.cpp(79): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\users\jeanseb\desktop\testsdl\testsdl\gamemethods.cpp(86): warning C4018: '<' : incompatibilité signed/unsigned
-c:\users\jeanseb\desktop\testsdl\testsdl\gamemethods.cpp(108): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\users\jeanseb\desktop\testsdl\testsdl\gamemethods.cpp(109): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\users\jeanseb\desktop\testsdl\testsdl\gamemethods.cpp(112): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\users\jeanseb\desktop\testsdl\testsdl\gamemethods.cpp(113): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-  testsdl.vcxproj -> C:\Users\JeanSeb\Desktop\testsdl\Debug\testsdl.exe
+﻿  Source.cpp
+  testsdl.vcxproj -> D:\GitRepo\FootSdl\FootSdl\Debug\testsdl.exe
