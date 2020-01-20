@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 		100, 100, // coordinates on the screen, in pixels, of the window's upper left corner
 		1366, 768, // window's length and height in pixels  
 		SDL_WINDOW_OPENGL);
+	
 
 	SDL_Delay(3000); // window lasts 3 seconds
 	SDL_DestroyWindow(window);
