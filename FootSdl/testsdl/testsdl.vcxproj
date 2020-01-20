@@ -142,10 +142,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Balle.cpp" />
+    <ClCompile Include="Goal.cpp" />
+    <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="ObjetDeplacable.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Balle.h" />
+    <ClInclude Include="Goal.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Joueur.h" />
+    <ClInclude Include="ObjetDeplacable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
