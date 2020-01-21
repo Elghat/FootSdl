@@ -5,19 +5,19 @@ Goal::Goal(SDL_Renderer *R):Goal(R,0){}
 Goal::Goal(SDL_Renderer *R,int Camp) {
 	renderer = R;
 	zoneOnTheScreen = SDL_Rect();
-	zoneOnTheScreen.h = 50;
-	zoneOnTheScreen.w = 50;
-	zoneOnTheScreen.y = 200;
+	zoneOnTheScreen.h = HEIGHT/3;
+	zoneOnTheScreen.w = WIDTH/12;
+	zoneOnTheScreen.y = (HEIGHT/2)-zoneOnTheScreen.h/2;
 	if (Camp == 0) {
-		sprite = SDL_CreateTextureFromSurface(renderer,IMG_Load("./asset/GoalGauche.png"));
+		sprite = SDL_CreateTextureFromSurface(renderer,IMG_Load("./assets/GoalGauche.png"));
 		zoneOnTheScreen.x = 0;
 	}
 	else {
-		sprite = SDL_CreateTextureFromSurface(renderer, IMG_Load("./asset/GoalDroite.png"));
-		zoneOnTheScreen.x = 1000;
+		sprite = SDL_CreateTextureFromSurface(renderer, IMG_Load("./assets/GoalDroite.png"));
+		zoneOnTheScreen.x = WIDTH-zoneOnTheScreen.w;
 	}
 }
 
-void Goal::ShowGoalOnRendere(SDL_Renderer* r) {
+void Goal::ShowGoalOnRendere() {
 	SDL_RenderCopy(renderer, sprite, NULL,&zoneOnTheScreen);
 }

@@ -6,6 +6,7 @@
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="ObjetDeplacable.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Objet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Balle.h" />
@@ -13,5 +14,6 @@
     <ClInclude Include="Header.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="ObjetDeplacable.h" />
+    <ClInclude Include="Objet.h" />
   </ItemGroup>
 </Project>

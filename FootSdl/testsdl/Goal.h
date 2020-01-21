@@ -11,6 +11,6 @@ public:
 	bool InGoal(Balle theBalle);
 	Goal(SDL_Renderer* r);
 	Goal(SDL_Renderer* r,int Camp);
-	void ShowGoalOnRendere(SDL_Renderer *r);
+	void ShowGoalOnRendere();
 };
 

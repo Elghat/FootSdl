@@ -145,6 +145,7 @@
     <ClCompile Include="Balle.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="Objet.cpp" />
     <ClCompile Include="ObjetDeplacable.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="Goal.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Joueur.h" />
+    <ClInclude Include="Objet.h" />
     <ClInclude Include="ObjetDeplacable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
