@@ -1,2 +1,16 @@
+<<<<<<< Updated upstream
 ﻿  Goal.cpp
   testsdl.vcxproj -> C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\x64\Debug\testsdl.exe
+=======
+﻿  Balle.cpp
+D:\GitRepo\FootSdl\FootSdl\testsdl\Header.h(6,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Goal.cpp
+D:\GitRepo\FootSdl\FootSdl\testsdl\Header.h(6,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Joueur.cpp
+D:\GitRepo\FootSdl\FootSdl\testsdl\Header.h(6,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  ObjetDeplacable.cpp
+D:\GitRepo\FootSdl\FootSdl\testsdl\Header.h(6,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Source.cpp
+D:\GitRepo\FootSdl\FootSdl\testsdl\Header.h(6,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Generating Code...
+>>>>>>> Stashed changes
