@@ -1,13 +1,12 @@
 #pragma once
 #include "Balle.h"
-class Goal
+class Goal:public Objet
 {
-private:
-	SDL_Rect zoneOnTheScreen;
-	SDL_Texture* sprite;
-	SDL_Renderer* renderer;
+
 public:
-	bool OnColision(Balle theBalle);
+	virtual SDL_Rect getRect();
+	virtual SDL_Texture* getSprite();
+	int OnColision(Balle theBalle);
 	bool InGoal(Balle theBalle);
 	Goal(SDL_Renderer* r);
 	Goal(SDL_Renderer* r,int Camp);

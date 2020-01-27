@@ -5,9 +5,10 @@ class Objet
 protected:
 	SDL_Texture* sprite;
 	SDL_Rect zoneOntheScreen;
+	SDL_Renderer* renderer;
 public:
-	SDL_Rect getRect();
-	SDL_Texture* getSprite();
+	virtual SDL_Rect getRect() = 0;
+	virtual SDL_Texture* getSprite() = 0;
 
 };
 
