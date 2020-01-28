@@ -12,22 +12,15 @@ int main(int argc, char *argv[])
 		100, 100, // coordinates on the screen, in pixels, of the window's upper left corner
 		WIDTH, HEIGHT, // window's length and height in pixels  
 		SDL_WINDOW_OPENGL);
-	
-	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
-	SDL_Surface* surface;
-	SDL_Rect properties;
-	properties.x = 0;
-	properties.y = 0;
-	properties.w = 1366;
-	properties.h = 768;
-	surface = IMG_Load("Asset/FootBallTerrain.jpeg");
-	if (surface == NULL)
-	{
-		SDL_TriggerBreakpoint();
-	}
-	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_RenderCopy(renderer, texture, &properties, &properties);
-	SDL_RenderPresent(renderer);
+
+	SDL_Renderer* r = SDL_CreateRenderer(window, 1, NULL);
+
+
+	listeGoal.push_back(Goal(r, 0));
+	listeGoal.push_back(Goal(r, 1));
+	listeGoal.at(0).ShowGoalOnRendere();
+	listeGoal.at(1).ShowGoalOnRendere();
+	SDL_RenderPresent(r);
 	SDL_Delay(3000); // window lasts 3 seconds
 	SDL_DestroyWindow(window);
 	SDL_Quit();
