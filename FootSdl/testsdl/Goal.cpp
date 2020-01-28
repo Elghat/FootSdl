@@ -11,6 +11,7 @@ SDL_Texture* Goal::getSprite() {
 int Goal::OnColision(Balle theB) {
 	int inCollisionX = -1;
 	int inCollisionY = -1;
+	/*
 	SDL_Rect theBCollisionRect = theB.getRect();
 	if (theBCollisionRect.x <= zoneOntheScreen.x && theBCollisionRect.w > zoneOntheScreen.x) {
 		inCollisionX = 0;
@@ -43,6 +44,7 @@ int Goal::OnColision(Balle theB) {
 	if (inCollisionX != -1 && inCollisionY != -1) {
 		return inCollisionX + inCollisionY;
 	}
+	*/
 	return -1;
 
 
