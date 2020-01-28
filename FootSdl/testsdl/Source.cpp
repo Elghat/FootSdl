@@ -1,6 +1,7 @@
 #include "Goal.h"
 using namespace std;
 
+void initBG(SDL_Renderer* r);
 int main(int argc, char *argv[])
 {
 	SDL_Init(SDL_INIT_VIDEO);
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
 		SDL_WINDOW_OPENGL);
 
 	SDL_Renderer* r = SDL_CreateRenderer(window, 1, NULL);
+	initBG(r);
 	Balle theBall = Balle(r);
 
 	listeGoal.push_back(Goal(r, 0));
@@ -34,4 +36,16 @@ int main(int argc, char *argv[])
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 	return 0;
+}
+
+void initBG(SDL_Renderer* r)
+{
+	SDL_Surface* srfc = IMG_Load("./assets/FootBallTerrain.png");
+	SDL_Texture* bgTex = SDL_CreateTextureFromSurface(r, srfc);
+	SDL_Rect bgRect;
+	bgRect.x = 0;
+	bgRect.y = 0;
+	bgRect.w = 1366;
+	bgRect.h = 768;
+	SDL_RenderCopy(r, bgTex, NULL, &bgRect);
 }
