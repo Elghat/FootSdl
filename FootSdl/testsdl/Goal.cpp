@@ -11,8 +11,11 @@ SDL_Texture* Goal::getSprite() {
 int Goal::OnColision(Balle theB) {
 	int inCollisionX = -1;
 	int inCollisionY = -1;
-	/*
 	SDL_Rect theBCollisionRect = theB.getRect();
+	std::cout << "Info Data:\n--------------\n";
+	std::cout << "Goal : x:" << zoneOntheScreen.x << "\ny:" << zoneOntheScreen.y << "\nw:" << zoneOntheScreen.w << "\nh:" << zoneOntheScreen.h << "\n";
+	std::cout << "Balle : x:" << theBCollisionRect.x << "\ny:" << theBCollisionRect.y << "\nw:" << theBCollisionRect.w << "\nh:" << theBCollisionRect.h << "\n";
+	std::cout << "------------------------------";
 	if (theBCollisionRect.x <= zoneOntheScreen.x && theBCollisionRect.w > zoneOntheScreen.x) {
 		inCollisionX = 0;
 		// E
@@ -41,10 +44,10 @@ int Goal::OnColision(Balle theB) {
 			// S
 		}
 	}
+	std::cout <<  "colli" << inCollisionX << " et " << inCollisionY << "\n";
 	if (inCollisionX != -1 && inCollisionY != -1) {
 		return inCollisionX + inCollisionY;
 	}
-	*/
 	return -1;
 
 

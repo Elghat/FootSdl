@@ -9,6 +9,7 @@ protected:
 public:
 	virtual SDL_Rect getRect() = 0;
 	virtual SDL_Texture* getSprite() = 0;
+	virtual void ShowInRenderer();
 
 };
 

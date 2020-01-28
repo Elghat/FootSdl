@@ -3,7 +3,8 @@
 class Balle : public ObjetDeplacable
 {
 public:
-	void MoveTo(float x,float y);
+	Balle(SDL_Renderer* R);
+	void MoveTo(float nextX,float nextY);
 	virtual SDL_Rect getRect();
 	virtual SDL_Texture* getSprite();
 };
