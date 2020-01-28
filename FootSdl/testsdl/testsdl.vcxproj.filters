@@ -4,56 +4,16 @@
     <ClCompile Include="Balle.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="Joueur.cpp" />
+    <ClCompile Include="Objet.cpp" />
     <ClCompile Include="ObjetDeplacable.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Objet.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
     <ClInclude Include="Balle.h" />
     <ClInclude Include="Goal.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Joueur.h" />
-    <ClInclude Include="ObjetDeplacable.h" />
     <ClInclude Include="Objet.h" />
-=======
-    <ClCompile Include="Source.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Balle.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Goal.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Joueur.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjetDeplacable.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Header.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Balle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Goal.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Joueur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjetDeplacable.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
->>>>>>> Stashed changes
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\FootBallTerrain.jpeg">
-      <Filter>Fichiers de ressources</Filter>
-    </Image>
+    <ClInclude Include="ObjetDeplacable.h" />
   </ItemGroup>
 </Project>
