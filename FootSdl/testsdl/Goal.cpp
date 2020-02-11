@@ -8,43 +8,40 @@ SDL_Texture* Goal::getSprite() {
 	return sprite;
 }
 
-int Goal::OnColision(Balle theB) {
+int Goal::OnColisionPrivate(Balle theB) {
 	int inCollisionX = -1;
 	int inCollisionY = -1;
 	SDL_Rect theBCollisionRect = theB.getRect();
-	std::cout << "Info Data:\n--------------\n";
-	std::cout << "Goal : x:" << zoneOntheScreen.x << "\ny:" << zoneOntheScreen.y << "\nw:" << zoneOntheScreen.w << "\nh:" << zoneOntheScreen.h << "\n";
-	std::cout << "Balle : x:" << theBCollisionRect.x << "\ny:" << theBCollisionRect.y << "\nw:" << theBCollisionRect.w << "\nh:" << theBCollisionRect.h << "\n";
-	std::cout << "------------------------------";
-	if (theBCollisionRect.x <= zoneOntheScreen.x && theBCollisionRect.w > zoneOntheScreen.x) {
+	// collision Goal
+	if (theBCollisionRect.x <= zoneOntheScreen.x && theBCollisionRect.w+theBCollisionRect.x > zoneOntheScreen.x) {
 		inCollisionX = 0;
-		// E
+		// W
 	}
-	else if (theBCollisionRect.x > zoneOntheScreen.x && theBCollisionRect.x < zoneOntheScreen.w) {
-		if (theBCollisionRect.w <= zoneOntheScreen.w) {
+	else if (theBCollisionRect.x > zoneOntheScreen.x && theBCollisionRect.x < zoneOntheScreen.w+zoneOntheScreen.x) {
+		if (theBCollisionRect.w + theBCollisionRect.x <= zoneOntheScreen.w + zoneOntheScreen.x) {
 			inCollisionX = 1;
 			// C
 		}
-		else if (theBCollisionRect.w > zoneOntheScreen.w) {
+		else if (theBCollisionRect.w+theBCollisionRect.x > zoneOntheScreen.w + zoneOntheScreen.x) {
 			inCollisionX = 2;
-			// W
+			// E
 		}
 	}
-	if (theBCollisionRect.y <= zoneOntheScreen.y && theBCollisionRect.h > zoneOntheScreen.y) {
+	if (theBCollisionRect.y <= zoneOntheScreen.y && theBCollisionRect.h + theBCollisionRect.y > zoneOntheScreen.y) {
 		inCollisionY = 0;
 		// N
 	}
-	else if (theBCollisionRect.y > zoneOntheScreen.y && theBCollisionRect.y < zoneOntheScreen.h) {
-		if (theBCollisionRect.h <= zoneOntheScreen.h) {
+	else if (theBCollisionRect.y > zoneOntheScreen.y && theBCollisionRect.y < zoneOntheScreen.h + zoneOntheScreen.y) {
+		if (theBCollisionRect.h+theBCollisionRect.y <= zoneOntheScreen.h + zoneOntheScreen.y) {
 			inCollisionY = 3;
 			// C
 		}
-		else if (theBCollisionRect.h > zoneOntheScreen.h) {
+		else if (theBCollisionRect.h+theBCollisionRect.y > zoneOntheScreen.h+zoneOntheScreen.y) {
 			inCollisionY = 6;
 			// S
 		}
 	}
-	std::cout <<  "colli" << inCollisionX << " et " << inCollisionY << "\n";
+	//std::cout <<  "colli" << inCollisionX << " et " << inCollisionY << "\n";
 	if (inCollisionX != -1 && inCollisionY != -1) {
 		return inCollisionX + inCollisionY;
 	}
@@ -53,14 +50,21 @@ int Goal::OnColision(Balle theB) {
 
 }
 
-bool Goal::InGoal(Balle theB) {
-	bool Goal = false;
-	int isIn = OnColision(theB);
-	if (isIn == 4) {
-		Goal = true;
+bool Goal::OnColision(Balle theBalle) {
+	int collision = OnColisionPrivate(theBalle);
+	bool inGoal = false;
+	if (collision >= 0 && collision < 3 || collision >5 && collision <= 9) {
+		theBalle.rebond();
 	}
-	return Goal;
+	else if (collision == 3 && zoneOntheScreen.x == 0 || collision == 5 && zoneOntheScreen.x != 0) {
+		theBalle.rebond();
+	}
+	else if (collision == 4) {
+		inGoal = true;
+	}
+	return inGoal;
 }
+
 
 Goal::Goal(SDL_Renderer *R):Goal(R,0){}
 
