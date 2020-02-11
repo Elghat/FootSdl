@@ -41,9 +41,10 @@ void Joueur::WaitInput() {
 	}
 }
 
-Joueur::Joueur(SDL_Renderer* R) {
+Joueur::Joueur(SDL_Renderer* R,int identifiant) {
 	this->renderer = R;
-	x = WIDTH / 4;
+	this->id = identifiant;
+	x = ((id*2)*WIDTH + WIDTH) / 4;
 	y = HEIGHT / 2;
 	zoneOntheScreen.y = y;
 	zoneOntheScreen.x = x;

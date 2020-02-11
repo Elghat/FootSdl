@@ -63,43 +63,71 @@ void Balle::CollisionJoueur(Joueur player) {
 	SDL_Rect playerRect = player.getRect();
 	int lieuCollision = -1;
 	int numbers = 0;
-	if (playerRect.x <= zoneOntheScreen.x && playerRect.w + playerRect.x > zoneOntheScreen.x) {
-		lieuCollision = 0;
+	if (playerRect.x < zoneOntheScreen.x && playerRect.x + playerRect.w < zoneOntheScreen.x+zoneOntheScreen.w && playerRect.x + playerRect.w > zoneOntheScreen.x) {
 		numbers++;
+		lieuCollision = 0;
 	}
-	else if (playerRect.x > zoneOntheScreen.x&& playerRect.x < zoneOntheScreen.w + zoneOntheScreen.x) {
-		if (playerRect.w + playerRect.x <= zoneOntheScreen.w + zoneOntheScreen.x) {
-			numbers++;
-			std::cout << "OKBOOMER";
-			lieuCollision = 1;
-			// C
-		}
-		else if (playerRect.w + playerRect.x > zoneOntheScreen.w + zoneOntheScreen.x) {
+	else {
+		if (playerRect.x >= zoneOntheScreen.x + 2*zoneOntheScreen.w/4 && playerRect.x < zoneOntheScreen.w +zoneOntheScreen.x) {
 			numbers++;
 			lieuCollision = 2;
-			// E
+		}
+		else if (zoneOntheScreen.x + zoneOntheScreen.w < playerRect.x + playerRect.w && playerRect.x < zoneOntheScreen.x + zoneOntheScreen.w) {
+			numbers++;
+			lieuCollision = 1;
 		}
 	}
-	if (playerRect.y <= zoneOntheScreen.y && playerRect.h + playerRect.y > zoneOntheScreen.y) {
+	if (playerRect.y < zoneOntheScreen.y && playerRect.y + playerRect.h < zoneOntheScreen.y + zoneOntheScreen.h && playerRect.y + playerRect.h > zoneOntheScreen.y) {
 		numbers++;
 		lieuCollision += 0;
-		// S
 	}
-	else if (playerRect.y > zoneOntheScreen.y&& playerRect.y < zoneOntheScreen.h + zoneOntheScreen.y) {
-		if (playerRect.h + playerRect.y <= zoneOntheScreen.h + zoneOntheScreen.y) {
-			numbers++;
-			lieuCollision += 3;
-			// C
-		}
-		else if (playerRect.h + playerRect.y > zoneOntheScreen.h + zoneOntheScreen.y) {
+	else {
+		if (playerRect.y >= zoneOntheScreen.y + 2 * zoneOntheScreen.h / 4 && playerRect.y < zoneOntheScreen.h + zoneOntheScreen.y) {
 			numbers++;
 			lieuCollision += 6;
-			// N		
+		}
+		else if (zoneOntheScreen.y + zoneOntheScreen.h < playerRect.y + playerRect.h && playerRect.y < zoneOntheScreen.y + zoneOntheScreen.h) {
+			numbers++;
+			lieuCollision += 3;
 		}
 	}
+
+
 	if (numbers == 2) {
 		if (!inMouvement) {
-			std::cout << lieuCollision;
+			switch (lieuCollision) {
+			case 0:
+				directionAngle = 315;
+				break;
+			case 1:
+				directionAngle = 270;
+				break;
+			case 2:
+				directionAngle = 225;
+				break;
+			case 3:
+				directionAngle = 180;
+				break;
+			case 4:
+				directionAngle = 0;
+				break;
+			case 5:
+				directionAngle = 0;
+				break;
+			case 6:
+				directionAngle = 45;
+				break;
+			case 7:
+				directionAngle = 90;
+				break;
+			case 8:
+				directionAngle = 135;
+				break;
+			default:
+				rebond();
+				break;
+			}
+			inMouvement = true;
 		}
 		else {
 			rebond();

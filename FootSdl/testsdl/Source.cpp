@@ -24,13 +24,15 @@ int main(int argc, char *argv[])
 	Balle theBall = Balle(r);
 	Score.push_back(0);
 	Score.push_back(0);
-	Joueur player1 = Joueur(r);
+	Joueur player1 = Joueur(r,0);
+	Joueur player2 = Joueur(r, 1);
 	listeGoal.push_back(Goal(r, 0));
 	listeGoal.push_back(Goal(r, 1));
 	while (!endGame) {
 		// Verification Collision
 		theBall.CollisionWall();
 		theBall.CollisionJoueur(player1);
+		theBall.CollisionJoueur(player2);
 		for (int i = 0; i < listeGoal.size(); i++) {
 			if (listeGoal.at(i).OnColision(theBall)) {
 				Score.at(i) += 1;
@@ -51,6 +53,7 @@ int main(int argc, char *argv[])
 		listeGoal.at(1).ShowGoalOnRendere();
 		theBall.ShowInRenderer();
 		player1.ShowInRenderer();
+		player2.ShowInRenderer();
 		SDL_RenderPresent(r);
 		SDL_RenderClear(r);
 		if (theBall.getRect().x >= WIDTH) {

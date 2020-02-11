@@ -1,7 +1,5 @@
-﻿  Balle.cpp
+﻿  Source.cpp
 C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Header.h(15,28): warning C4305: 'initialisation' : troncation de 'double' à 'float'
-C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Balle.cpp(6,22): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Balle.cpp(7,22): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Balle.cpp(32,22): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Balle.cpp(33,22): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Source.cpp(40,43): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\testsdl\Source.cpp(14,6): warning C4101: 'collisionID' : variable locale non référencée
   testsdl.vcxproj -> C:\Users\David\Desktop\ProjetSdl\FootSdl\FootSdl\x64\Debug\testsdl.exe
